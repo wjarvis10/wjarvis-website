@@ -1,11 +1,13 @@
 import React from "react";
+import bfan_image from "../../public/images/bfan_demo.jpg";
+import webscraping_image from "../../public/images/web_scraping_2.jpg";
 
 interface Project {
   title: string;
   description: string;
   details: string;
   technologies: string[];
-  imageUrl?: string;
+  imageUrl?: string | ImportMeta["url"];
 }
 
 const projects: Project[] = [
@@ -26,7 +28,7 @@ const projects: Project[] = [
       "Linux",
       "Apache",
     ],
-    imageUrl: "../../public/images/bfan_demo.jpg",
+    imageUrl: bfan_image,
   },
   {
     title: "Pentair Pools Web Scraping",
@@ -35,7 +37,7 @@ const projects: Project[] = [
     details:
       "Built a Python web scraper, cleaned and matched product SKUs, and supported the implementation of a value-based pricing strategy.",
     technologies: ["Python", "Selenium", "Excel", "PowerPoint"],
-    imageUrl: "../../public/images/web_scraping_2.jpg",
+    imageUrl: webscraping_image,
   },
 ];
 
