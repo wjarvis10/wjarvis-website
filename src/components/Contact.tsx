@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 border-t-2 border-grey-300">
+    <section id="contact" className="py-20 border-t-2 border-grey-300">
       <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-4">
         Contact
       </h2>

@@ -22,8 +22,11 @@ const projects: Project[] = [
       "Java",
       "MySQL",
       "AWS",
+      "Ubuntu",
+      "Linux",
+      "Apache",
     ],
-    imageUrl: "/images/bfan.png", // Replace with your actual image path
+    imageUrl: "../../public/images/bfan_demo.jpg",
   },
   {
     title: "Pentair Pools Web Scraping",
@@ -32,13 +35,13 @@ const projects: Project[] = [
     details:
       "Built a Python web scraper, cleaned and matched product SKUs, and supported the implementation of a value-based pricing strategy.",
     technologies: ["Python", "Selenium", "Excel", "PowerPoint"],
-    imageUrl: "/images/pentair.png", // Replace with your actual image path
+    imageUrl: "../../public/images/web_scraping_2.jpg",
   },
 ];
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-24 space-y-24">
+    <section id="projects" className="py-20 space-y-24">
       <div className="text-sm uppercase tracking-widest text-gray-500">
         Projects
       </div>
@@ -48,13 +51,15 @@ const Projects: React.FC = () => {
           className="flex flex-col md:flex-row gap-8 items-start md:items-center"
         >
           {project.imageUrl && (
-            <img
-              src={project.imageUrl}
-              alt={project.title}
-              className="w-full md:w-1/2 rounded-xl shadow-md"
-            />
+            <div className="w-full flex justify-center md:w-1/2">
+              <img
+                src={project.imageUrl}
+                alt={project.title}
+                className="w-full rounded-xl max-h-80 w-auto"
+              />
+            </div>
           )}
-          <div className="md:w-1/2">
+          <div className="w-full md:w-1/2 pl-6 md:pl-12 pt-6 md:pt-0 border-t md:border-t-0 md:border-l-2 border-gray-300">
             <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
             <p className="text-gray-700 mb-2">{project.description}</p>
             <p className="text-gray-500 text-sm mb-4">{project.details}</p>
