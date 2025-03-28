@@ -1,6 +1,6 @@
 import React from "react";
-import bfan_image from "../../public/images/bfan_demo.jpg";
-import webscraping_image from "../../public/images/web_scraping_2.jpg";
+import bfan_image from "../assets/images/bfan_demo.png";
+import webscraping_image from "../assets/images/web_scraping_2.png";
 
 interface Project {
   title: string;
