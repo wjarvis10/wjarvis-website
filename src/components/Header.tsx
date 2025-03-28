@@ -1,5 +1,5 @@
 import React from "react";
-import wj_logo from "../../public/images/WJ_logo_2.png";
+import wj_logo from "../assets/images/WJ_logo_2.png";
 const Header: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm border-b-2 border-grey-300">
