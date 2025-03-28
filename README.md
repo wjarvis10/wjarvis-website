@@ -1,54 +1,73 @@
-# React + TypeScript + Vite
+# WJarvis Personal Website 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal website and portfolio, built with **React**, **TypeScript**, and **TailwindCSS**, powered by **Vite**. It’s a single-page site that displays information about me, my projects, and includes a contact form that sends messages via **EmailJS**.
 
-Currently, two official plugins are available:
+Live version coming soon (to be deployed via Netlify or Vercel).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** + **TypeScript**
+- **Vite** (for fast dev/build)
+- **TailwindCSS** for styling
+- **EmailJS** for form submission
+- **Deployed with:** (coming soon)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## Features
+
+- 🔒 Sticky top header navigation
+- 🙋 About section with intro and bio
+- 🧠 Project case study sections
+- 💬 Contact form with EmailJS
+- 📱 Fully responsive layout
+
+---
+
+## Project Structure
+
+src/
+├── components/
+│ ├── Header.tsx
+│ ├── About.tsx
+│ ├── Projects.tsx
+│ └── Contact.tsx
+├── App.tsx
+├── main.tsx
+└── index.css
+
+---
+
+## 🛠️ Setup Instructions
+
+```bash
+git clone https://github.com/your-username/wjarvis-website.git
+cd wjarvis-website
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Make sure src/index.css includes:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+And tailwind.config.js is set to scan:
+content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"]
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Contact Form Setup (EmailJS)
+
+1. Create an account at https://emailjs.com
+2. Set up:
+
+- Email service
+- Email template
+- Get your service_id, template_id, public_key
+
+3. Replace the values in Contact.tsx where emailjs.sendForm() is called
+
+## Build for Production
+
+npm run build
