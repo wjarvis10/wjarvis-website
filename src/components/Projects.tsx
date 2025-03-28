@@ -14,16 +14,23 @@ const projects: Project[] = [
     description:
       "Built a private professional networking platform from scratch for Brown University's football team, connecting current players and alumni.",
     details:
-      "Full-stack app with React frontend, Spring Boot backend, MySQL database. Deployed on AWS EC2 & RDS. Led a team of 2 from ideation to launch.",
-    technologies: ["ReactJS", "TypeScript", "Spring Boot", "Java", "MySQL"],
+      "Full-stack app with React frontend, Spring Boot Java backend, and a MySQL database. Deployed on AWS EC2 & RDS. Led a team of 2 from ideation to launch.",
+    technologies: [
+      "ReactJS",
+      "TypeScript",
+      "Spring Boot",
+      "Java",
+      "MySQL",
+      "AWS",
+    ],
     imageUrl: "/images/bfan.png", // Replace with your actual image path
   },
   {
     title: "Pentair Pools Web Scraping",
     description:
-      "Worked on a strategic pricing project for $4.1B Pentair pool company, gathering and standardizing competitive data.",
+      "Worked on a strategic pricing project for $4.1B pool company, gathering, standardizing, and cross-referencing competitive data.",
     details:
-      "Built a Python web scraper, cleaned and matched product SKUs, and supported implementation of value-based pricing strategy.",
+      "Built a Python web scraper, cleaned and matched product SKUs, and supported the implementation of a value-based pricing strategy.",
     technologies: ["Python", "Selenium", "Excel", "PowerPoint"],
     imageUrl: "/images/pentair.png", // Replace with your actual image path
   },

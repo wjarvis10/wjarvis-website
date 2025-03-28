@@ -1,36 +1,55 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: integrate with backend or EmailJS
-    console.log("Form submitted:", formData);
-    alert("Message sent (demo only)");
-    setFormData({ email: "", subject: "", message: "" });
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setStatus("sent");
+        formRef.current?.reset();
+      })
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        setStatus("error");
+      });
   };
 
   return (
-    <section id="contact" className="py-24 border-t mt-12">
+    <section id="contact" className="py-24 border-t-2 border-grey-300">
       <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-4">
         Contact
       </h2>
       <h3 className="text-3xl font-bold mb-6">Let’s get in touch</h3>
-      <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl">
+
+      {status === "sent" && (
+        <p className="text-green-600 mb-4">Message sent successfully!</p>
+      )}
+      {status === "error" && (
+        <p className="text-red-600 mb-4">
+          Something went wrong. Please try again.
+        </p>
+      )}
+
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        className="space-y-6 max-w-2xl"
+      >
         <div>
           <label
-            htmlFor="email"
+            htmlFor="user_email"
             className="block text-sm font-medium text-gray-700"
           >
             Your Email
@@ -38,16 +57,14 @@ const Contact: React.FC = () => {
           <input
             required
             type="email"
-            name="email"
-            id="email"
+            name="user_email"
+            id="user_email"
             className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-            value={formData.email}
-            onChange={handleChange}
           />
         </div>
         <div>
           <label
-            htmlFor="subject"
+            htmlFor="title"
             className="block text-sm font-medium text-gray-700"
           >
             Subject
@@ -55,11 +72,9 @@ const Contact: React.FC = () => {
           <input
             required
             type="text"
-            name="subject"
-            id="subject"
+            name="title"
+            id="title"
             className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-            value={formData.subject}
-            onChange={handleChange}
           />
         </div>
         <div>
@@ -75,8 +90,6 @@ const Contact: React.FC = () => {
             id="message"
             rows={5}
             className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-            value={formData.message}
-            onChange={handleChange}
           />
         </div>
         <button

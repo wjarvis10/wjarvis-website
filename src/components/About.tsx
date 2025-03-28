@@ -2,7 +2,7 @@ import React from "react";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="pt-32 pb-24">
+    <section id="about" className="pt-32 pb-24 border-b-2 border-grey-300">
       <div className="text-sm uppercase tracking-widest text-gray-500 mb-4">
         About
       </div>
@@ -12,9 +12,11 @@ const About: React.FC = () => {
         with a passion for building meaningful products.
       </h1>
       <p className="text-lg text-gray-700 max-w-2xl">
-        I’m currently a senior at Brown University studying Computer Science. I
-        have a background in full-stack development, and I’m especially
-        passionate about creating thoughtful, user-centered digital experiences.
+        I’m currently a senior at Brown University studying Computer Science and
+        Business Economics. I have experience in full-stack development,
+        Web-Scraping / Data Science, and AI/ML/DL. I’m especially passionate
+        about creating thoughtful, user-centered digital experiences to deliver
+        AI-powered insights.
       </p>
     </section>
   );
