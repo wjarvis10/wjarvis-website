@@ -16,7 +16,7 @@ const projects: Project[] = [
     description:
       "Built a private professional networking platform from scratch for Brown University's football team, connecting current players and alumni.",
     details:
-      "Full-stack app with React frontend, Spring Boot Java backend, and a MySQL database. Deployed on AWS EC2 & RDS. Led a team of 2 from ideation to launch.",
+      "Full-stack web application with React frontend, Spring Boot Java backend, and a MySQL database. Deployed on AWS EC2 & RDS. Led a team of 2 from ideation to launch.",
     technologies: [
       "ReactJS",
       "TypeScript",
