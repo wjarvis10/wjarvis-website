@@ -13,9 +13,9 @@ const About: React.FC = () => {
       </h1>
       <p className="text-lg text-gray-700 max-w-2xl">
         I’m currently a senior at Brown University studying Computer Science and
-        Business Economics. I have experience in full-stack development,
-        Web-Scraping / Data Science, and AI/ML/DL. I’m especially passionate
-        about creating thoughtful, user-centered digital experiences to deliver
+        Business Economics. I have experience in full-stack development, web
+        scraping, data science, and AI/ML/DL. I’m especially passionate about
+        creating thoughtful, user-centered digital experiences to deliver
         AI-powered insights.
       </p>
     </section>
