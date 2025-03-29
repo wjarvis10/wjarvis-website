@@ -20,10 +20,26 @@ const Header: React.FC = () => {
     }
   };
 
+  const handleLogoClick = () => {
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false });
+      setTimeout(() => {
+        const aboutSection = document.getElementById("about");
+        aboutSection?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const aboutSection = document.getElementById("about");
+      aboutSection?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm border-b-2 border-grey-300">
       <div className="max-w-screen-xl mx-auto px-6 md:px-16 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-3">
+        <div
+          className="flex items-center space-x-3 cursor-pointer"
+          onClick={handleLogoClick}
+        >
           <img
             src={wj_logo} // Replace with your actual filename
             alt="WJ Logo"
