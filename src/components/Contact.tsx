@@ -31,7 +31,10 @@ const Contact: React.FC = () => {
       <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-4">
         Contact
       </h2>
-      <h3 className="text-3xl font-bold mb-6">Let’s get in touch</h3>
+      <h3 className="text-3xl font-bold mb-2">Let’s get in touch</h3>
+      <p className="text-lg text-gray-700 max-w-2xl mb-6">
+        Send me a message and I'll get back to you as soon as possible!
+      </p>
 
       {status === "sent" && (
         <p className="text-green-600 mb-4">Message sent successfully!</p>
