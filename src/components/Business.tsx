@@ -6,9 +6,9 @@ const Business: React.FC = () => {
     <div className="bg-white text-black font-sans">
       <main className="pt-32 px-6 md:px-16 max-w-screen-xl mx-auto space-y-20">
         <section>
-          <div className="text-sm uppercase tracking-widest text-gray-500 mb-4">
+          <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-4">
             Web Design & Development
-          </div>
+          </h2>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Custom websites and apps <br /> built to perform.
           </h1>
@@ -21,7 +21,7 @@ const Business: React.FC = () => {
 
         <section className="space-y-16 pt-20 border-t-2 border-gray-300">
           <div>
-            <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-2">
+            <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-4">
               Core Packages
             </h2>
             <h3 className="text-3xl font-bold">What I Offer</h3>
@@ -147,6 +147,15 @@ const Business: React.FC = () => {
         {/* Reused Contact Form */}
         <Contact />
       </main>
+      <button
+        onClick={() => {
+          const section = document.getElementById("contact");
+          section?.scrollIntoView({ behavior: "smooth" });
+        }}
+        className="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-gray-800 transition"
+      >
+        Contact Me
+      </button>
     </div>
   );
 };

@@ -44,7 +44,7 @@ const projects: Project[] = [
 const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-20 space-y-24">
-      <div className="text-sm uppercase tracking-widest text-gray-500">
+      <div className="text-sm uppercase tracking-widest text-gray-500 mb-4">
         Projects
       </div>
       {projects.map((project, index) => (
@@ -66,7 +66,7 @@ const Projects: React.FC = () => {
             <p className="text-gray-700 mb-2">{project.description}</p>
             <p className="text-gray-500 text-sm mb-4">{project.details}</p>
             <div>
-              <span className="text-xs uppercase text-gray-400 tracking-wider">
+              <span className="text-xs uppercase font-medium text-emerald-600 tracking-wider">
                 Technologies Used:
               </span>
               <ul className="flex flex-wrap mt-1 gap-2 text-sm text-gray-600">
