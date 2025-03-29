@@ -1,7 +1,29 @@
-import React from "react";
+import { useEffect, useRef, useState } from "react";
 import Contact from "./Contact";
 
 const Business: React.FC = () => {
+  const [showContactButton, setShowContactButton] = useState(true);
+  const contactRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowContactButton(!entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (contactRef.current) {
+      observer.observe(contactRef.current);
+    }
+
+    return () => {
+      if (contactRef.current) {
+        observer.unobserve(contactRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="bg-white text-black font-sans">
       <main className="pt-32 px-6 md:px-16 max-w-screen-xl mx-auto space-y-20">
@@ -145,17 +167,21 @@ const Business: React.FC = () => {
         </section>
 
         {/* Reused Contact Form */}
-        <Contact />
+        <section ref={contactRef}>
+          <Contact />
+        </section>
       </main>
-      <button
-        onClick={() => {
-          const section = document.getElementById("contact");
-          section?.scrollIntoView({ behavior: "smooth" });
-        }}
-        className="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-3 rounded-full shadow-lg transition"
-      >
-        Contact Me
-      </button>
+      {showContactButton && (
+        <button
+          onClick={() => {
+            const section = document.getElementById("contact");
+            section?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-3 rounded-full shadow-lg transition"
+        >
+          Contact Me
+        </button>
+      )}
     </div>
   );
 };
