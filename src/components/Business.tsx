@@ -152,7 +152,7 @@ const Business: React.FC = () => {
           const section = document.getElementById("contact");
           section?.scrollIntoView({ behavior: "smooth" });
         }}
-        className="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-gray-800 transition"
+        className="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-3 rounded-full shadow-lg transition"
       >
         Contact Me
       </button>
