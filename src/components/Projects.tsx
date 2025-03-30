@@ -57,11 +57,11 @@ const Projects: React.FC = () => {
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="w-full rounded-xl max-h-80 w-auto"
+                className="w-full max-h-80 object-contain rounded-xl"
               />
             </div>
           )}
-          <div className="w-full md:w-1/2 pl-6 md:pl-12 pt-6 md:pt-0 border-t md:border-t-0 md:border-l-2 border-gray-300">
+          <div className="w-full md:w-1/2 pl-6 md:pl-12 pt-10 md:pt-0 border-t md:border-t-0 md:border-l-2 border-gray-300">
             <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
             <p className="text-gray-700 mb-2">{project.description}</p>
             <p className="text-gray-500 text-sm mb-4">{project.details}</p>
