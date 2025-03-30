@@ -18,6 +18,14 @@ const About: React.FC = () => {
         creating thoughtful, user-centered digital experiences to deliver
         AI-powered insights.
       </p>
+      <div className="mt-10">
+        <a
+          href="/business"
+          className="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-6 py-3 rounded-md transition"
+        >
+          See how I can help you
+        </a>
+      </div>
     </section>
   );
 };
