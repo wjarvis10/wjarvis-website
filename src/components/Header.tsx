@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import wj_logo from "../assets/images/WJ_logo_2.png";
+import wj_classic from "../assets/images/classic_logo.png";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -63,11 +63,11 @@ const Header: React.FC = () => {
           onClick={handleLogoClick}
         >
           <img
-            src={wj_logo} // Replace with your actual filename
+            src={wj_classic} // Replace with your actual filename
             alt="WJ Logo"
-            className="h-8 w-8 object-contain"
+            className="h-10 w-10 object-contain"
           />
-          <div className="text-2xl font-bold">Will Jarvis</div>
+          <div className="text-2xl font-light">Will Jarvis</div>
         </div>
         <div className="md:hidden relative" ref={menuRef}>
           <button onClick={() => setMenuOpen(!menuOpen)} className="text-3xl">
