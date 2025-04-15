@@ -67,7 +67,7 @@ const Header: React.FC = () => {
             alt="WJ Logo"
             className="h-10 w-10 object-contain"
           />
-          <div className="text-2xl font-light">Will Jarvis</div>
+          <div className="font-openSans text-2xl font-light">Will Jarvis</div>
         </div>
         <div className="md:hidden relative" ref={menuRef}>
           <button onClick={() => setMenuOpen(!menuOpen)} className="text-3xl">
