@@ -1,6 +1,8 @@
 import React from "react";
 import bfan_image from "../assets/images/bfan_demo.png";
 import webscraping_image from "../assets/images/web_scraping_2.png";
+import classifier_image from "../assets/images/drivers_license_1.jpg";
+import DocumentClassifier from "./DocumentClassifier";
 
 interface Project {
   title: string;
@@ -8,9 +10,32 @@ interface Project {
   details: string;
   technologies: string[];
   imageUrl?: string | ImportMeta["url"];
+  component?: React.ReactNode;
 }
 
 const projects: Project[] = [
+  {
+    title: "AI Document Classifier",
+    description:
+      "Built an end-to-end document classification system with an interactive frontend and a Flask-based machine learning backend.",
+    details:
+      "Trained a supervised learning model on both real and synthetic document text data to intelligently categorize files by content. Built a full-featured React app with live file upload and classification via an API deployed on Railway. Supports PDF, Word, Excel, and image files with text extracted using OCR and parsing libraries.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Flask",
+      "Python",
+      "scikit-learn",
+      "Tesseract OCR",
+      "Gunicorn",
+      "Docker",
+      "Railway",
+      "Vercel",
+    ],
+    imageUrl: classifier_image,
+    component: <DocumentClassifier />,
+  },
   {
     title: "BFAN – Brown Football Alumni Network",
     description:
@@ -77,6 +102,9 @@ const Projects: React.FC = () => {
                 ))}
               </ul>
             </div>
+            {project.component && (
+              <div className="mt-6">{project.component}</div>
+            )}
           </div>
         </div>
       ))}
