@@ -45,8 +45,8 @@ const DocumentClassifier = () => {
       <h3 className="text-2xl font-bold text-gray-900">Try It Yourself</h3>
 
       <p className="text-sm text-gray-700">
-        Upload a document to see how the classifier categorizes it based on the
-        text content of the file.
+        Upload a drivers licence, bank statement, or invoice to see how the
+        classifier categorizes it based on the text content of the file.
         <br />
         <span className="text-gray-500 text-sm my-2">
           Supported file types: PDF, JPG, PNG, DOCX, XLSX, and XLS
