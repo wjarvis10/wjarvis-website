@@ -3,6 +3,7 @@ import bfan_image from "../assets/images/bfan_demo.png";
 import webscraping_image from "../assets/images/web_scraping_2.png";
 import classifier_image from "../assets/images/drivers_license_1.jpg";
 import DocumentClassifier from "./DocumentClassifier";
+import github_logo from "../assets/images/GitHub_Logo_White.png";
 
 interface Project {
   title: string;
@@ -11,6 +12,7 @@ interface Project {
   technologies: string[];
   imageUrl?: string | ImportMeta["url"];
   component?: React.ReactNode;
+  github?: string;
 }
 
 const projects: Project[] = [
@@ -35,6 +37,7 @@ const projects: Project[] = [
     ],
     imageUrl: classifier_image,
     component: <DocumentClassifier />,
+    github: "https://github.com/wjarvis10/document_classifier",
   },
   {
     title: "BFAN – Brown Football Alumni Network",
@@ -63,6 +66,7 @@ const projects: Project[] = [
       "Built a Python web scraper, cleaned and matched product SKUs, and supported the implementation of a value-based pricing strategy.",
     technologies: ["Python", "Selenium", "Excel", "PowerPoint"],
     imageUrl: webscraping_image,
+    github: "https://github.com/wjarvis10/webscraper",
   },
 ];
 
@@ -87,7 +91,23 @@ const Projects: React.FC = () => {
             </div>
           )}
           <div className="w-full md:w-1/2 pl-6 md:pl-12 pt-10 md:pt-0 border-t md:border-t-0 md:border-l-2 border-gray-300">
-            <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
+            <div className="flex items-center align-start mb-2">
+              <h2 className="text-2xl font-semibold">{project.title}</h2>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-4 px-2 py-1 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition-colors"
+                >
+                  <img
+                    src={github_logo}
+                    alt="GitHub Repo"
+                    className="h-5 w-fit"
+                  />
+                </a>
+              )}
+            </div>
             <p className="text-gray-700 mb-2">{project.description}</p>
             <p className="text-gray-500 text-sm mb-4">{project.details}</p>
             <div>
