@@ -7,9 +7,8 @@ const About: React.FC = () => {
         About
       </div>
       <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        I’m a builder with a background in tech and business, passionate
-        <br />
-        about creating meaningful solutions in software and finance.
+        I’m a builder with a background in tech and business, passionate about
+        creating meaningful solutions in software and finance.
       </h1>
       <p className="text-lg text-gray-700 max-w-2xl">
         I recently graduated from Brown University with a degree in Computer
