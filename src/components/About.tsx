@@ -7,16 +7,17 @@ const About: React.FC = () => {
         About
       </div>
       <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        I'm a creative developer and engineer
+        I’m a builder with a background in tech and business, passionate
         <br />
-        with a passion for building meaningful products.
+        about creating meaningful solutions in software and finance.
       </h1>
       <p className="text-lg text-gray-700 max-w-2xl">
-        I’m currently a senior at Brown University studying Computer Science and
-        Business Economics. I have experience in full-stack development, web
-        scraping, data science, and AI/ML/DL. I’m especially passionate about
-        creating thoughtful, user-centered digital experiences to deliver
-        AI-powered insights.
+        I recently graduated from Brown University with a degree in Computer
+        Science and Business Economics. My experience spans management
+        consulting, full-stack development, web scraping, data science, and
+        AI/ML. I'm especially interested in how technology can drive innovation
+        in finance, and I’m passionate about building user-centered products
+        that deliver intelligent, data-driven insights.
       </p>
       <div className="mt-10">
         <a
